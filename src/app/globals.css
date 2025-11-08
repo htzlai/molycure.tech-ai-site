@@ -44,38 +44,38 @@
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   --card: #FFFFFF;
-  --card-foreground: #1A1A1A;
+  --card-foreground: #1F2937;
   --popover: #FFFFFF;
-  --popover-foreground: #1A1A1A;
-  --primary: #007BFF;
+  --popover-foreground: #1F2937;
+  --primary: #8B5CF6; /* 优雅的紫色 */
   --primary-foreground: #FFFFFF;
-  --secondary: #D60000;
+  --secondary: #EC4899; /* 温暖的粉色 */
   --secondary-foreground: #FFFFFF;
-  --muted: #F8F9FA;
-  --muted-foreground: #4A5568;
-  --accent: #00A859;
+  --muted: #F9FAFB;
+  --muted-foreground: #6B7280;
+  --accent: #F59E0B; /* 金色点缀 */
   --accent-foreground: #FFFFFF;
-  --destructive: #D60000;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
-  --ring: #007BFF;
-  --chart-1: #007BFF;
-  --chart-2: #00A859;
-  --chart-3: #D60000;
-  --chart-4: #FFA500;
-  --chart-5: #718096;
+  --destructive: #EF4444;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #8B5CF6;
+  --chart-1: #8B5CF6; /* 紫色 */
+  --chart-2: #EC4899; /* 粉色 */
+  --chart-3: #F59E0B; /* 金色 */
+  --chart-4: #3B82F6; /* 蓝色 */
+  --chart-5: #10B981; /* 绿色 */
   --sidebar: #FFFFFF;
-  --sidebar-foreground: #1A1A1A;
-  --sidebar-primary: #007BFF;
+  --sidebar-foreground: #1F2937;
+  --sidebar-primary: #8B5CF6;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F8F9FA;
-  --sidebar-accent-foreground: #1A1A1A;
-  --sidebar-border: #E2E8F0;
-  --sidebar-ring: #007BFF;
+  --sidebar-accent: #F9FAFB;
+  --sidebar-accent-foreground: #1F2937;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #8B5CF6;
   --background: #FFFFFF;
-  --foreground: #1A1A1A;
+  --foreground: #1F2937;
 }
 
 .dark {
@@ -114,35 +114,35 @@
 
 @layer base {
   :root {
-    --background: 220 13% 97%; /* #F8F9FA */
-    --foreground: 220 9% 15%; /* #202124 */
+    --background: 0 0% 100%; /* Pure White */
+    --foreground: 217 33% 17%; /* #1F2937 */
 
     --card: 0 0% 100%;
-    --card-foreground: 220 9% 15%;
+    --card-foreground: 217 33% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 9% 15%;
+    --popover-foreground: 217 33% 17%;
 
-    --primary: 211 100% 50%; /* #007BFF */
+    --primary: 258 90% 66%; /* #8B5CF6 优雅紫色 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 153 100% 33%; /* #00A859 */
+    --secondary: 330 81% 60%; /* #EC4899 温暖粉色 */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 13% 94%; /* #E8EAED */
-    --muted-foreground: 220 7% 45%; /* #5F6368 */
+    --muted: 220 14% 98%; /* #F9FAFB */
+    --muted-foreground: 220 9% 46%; /* #6B7280 */
 
-    --accent: 0 100% 42%; /* #D60000 */
+    --accent: 38 92% 50%; /* #F59E0B 金色点缀 */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 100% 42%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 88%; /* #DADCE0 */
-    --input: 220 13% 88%;
-    --ring: 211 100% 50%;
+    --border: 220 13% 91%; /* #E5E7EB */
+    --input: 220 13% 91%;
+    --ring: 258 90% 66%;
 
-    --radius: 0.5rem; /* 8px */
+    --radius: 0.75rem; /* 12px */
   }
 
   .dark {
@@ -186,6 +186,47 @@
   }
 }
 
+/* Custom Gradients for UUMI */
+.gradient-primary {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #EC4899 0%, #F59E0B 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.gradient-hover:hover::before {
+  left: 100%;
+}
+
+/* Animations */
 @keyframes text-shimmer {
   from {
     background-position: 200% 0;
@@ -202,4 +243,236 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* 慢速旋转 - 用于 logo 光环 */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 科技感脉冲效果 */
+@keyframes tech-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* 扫描线效果 */
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-tech-pulse {
+  animation: tech-pulse 2s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9FAFB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%);
+}
+
+/* 科技感效果 */
+
+/* 科技感边框 - 带光效 */
+.tech-border {
+  position: relative;
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #8B5CF6, #EC4899, #F59E0B) border-box;
+}
+
+.tech-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #8B5CF6, #EC4899, #F59E0B);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tech-border:hover::before {
+  opacity: 0.6;
+}
+
+/* 科技感光点 */
+.tech-dot {
+  position: relative;
+}
+
+.tech-dot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(135deg, #8B5CF6, #EC4899);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+  animation: tech-pulse 2s ease-in-out infinite;
+}
+
+/* 科技感标题装饰 */
+.tech-title {
+  position: relative;
+  display: inline-block;
+}
+
+.tech-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #8B5CF6, #EC4899, transparent);
+  border-radius: 2px;
+}
+
+/* 科技感网格背景 */
+.tech-grid {
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* 科技感渐变文字 - 带动画 */
+.tech-text-animated {
+  background: linear-gradient(
+    90deg,
+    #8B5CF6 0%,
+    #EC4899 25%,
+    #F59E0B 50%,
+    #EC4899 75%,
+    #8B5CF6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shimmer 3s linear infinite;
+}
+
+/* 科技感卡片 hover 效果 */
+.tech-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #8B5CF6, #EC4899, #F59E0B);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.tech-card:hover::before {
+  opacity: 0.1;
+}
+
+.tech-card:hover {
+  transform: translateY(-2px);
+}
+
+/* 科技感按钮效果 */
+.tech-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.tech-button:hover::after {
+  width: 300px;
+  height: 300px;
 }
