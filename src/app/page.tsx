@@ -371,7 +371,7 @@ AboutSection.displayName = "AboutSection";
 
 // Core Advantages Section
 const AdvantagesSection = memo(({ companyData, uiText }: { companyData: CompanyData; uiText: UIText }) => (
-  <Section className="bg-gradient-to-b from-green-50 to-white">
+  <Section id="services" className="bg-gradient-to-b from-green-50 to-white">
     <motion.div {...fadeInUp} className="text-center mb-16">
       <Badge className="mb-4 gradient-accent text-white border-0 shadow-md">
         {uiText.advantages.badge}
