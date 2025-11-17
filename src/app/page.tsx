@@ -159,8 +159,10 @@ const Navigation = memo(({ uiText }: { uiText: UIText }) => {
               <Languages className="w-4 h-4" />
               <span>{language === 'zh' ? 'EN' : '中文'}</span>
             </button>
-            <Button className="gradient-primary text-white shadow-lg hover:shadow-xl transition-shadow">
-              {uiText.navigation.requestSample}
+            <Button className="gradient-primary text-white shadow-lg hover:shadow-xl transition-shadow" asChild>
+              <a href={`mailto:uj.zhou@foxmail.com?subject=${language === 'zh' ? '咨询羊肚菌产品,并获取样品' : 'Inquiry about Morel Mushrooms and Request Sample'}`}>
+                {uiText.navigation.requestSample}
+              </a>
             </Button>
           </div>
 
@@ -201,8 +203,10 @@ const Navigation = memo(({ uiText }: { uiText: UIText }) => {
               <Languages className="w-5 h-5" />
               <span>{uiText.navigation.switchToEnglish}</span>
             </button>
-            <Button className="w-full mt-4 gradient-primary text-white">
-              {uiText.navigation.requestSample}
+            <Button className="w-full mt-4 gradient-primary text-white" asChild>
+              <a href={`mailto:uj.zhou@foxmail.com?subject=${language === 'zh' ? '咨询羊肚菌产品,并获取样品' : 'Inquiry about Morel Mushrooms and Request Sample'}`}>
+                {uiText.navigation.requestSample}
+              </a>
             </Button>
           </motion.div>
         )}
@@ -528,7 +532,7 @@ const CaseStudiesSection = memo(({ companyData, uiText }: { companyData: Company
               <CardContent className="space-y-5">
                 {/* Technologies */}
                 <div>
-                  <h4 className="font-bold text-base text-gray-900 mb-3">核心技术</h4>
+                  <h4 className="font-bold text-base text-gray-900 mb-3">{uiText.cases.technologies}</h4>
                   <div className="flex flex-wrap gap-2">
                     {caseStudy.technologies.map((tech, idx) => (
                       <Badge key={idx} variant="outline" className="text-sm font-medium">
@@ -542,14 +546,14 @@ const CaseStudiesSection = memo(({ companyData, uiText }: { companyData: Company
                 {caseStudy.painPoint && (
                   <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4">
                     <p className="text-base text-red-800 font-medium leading-relaxed">
-                      <strong className="font-bold">痛点：</strong>{caseStudy.painPoint}
+                      <strong className="font-bold">{uiText.cases.painPoint}</strong>{caseStudy.painPoint}
                     </p>
                   </div>
                 )}
 
                 {/* Features */}
                 <div>
-                  <h4 className="font-bold text-base text-gray-900 mb-3">核心功能</h4>
+                  <h4 className="font-bold text-base text-gray-900 mb-3">{uiText.cases.features}</h4>
                   <Accordion type="single" collapsible>
                     {caseStudy.features.map((feature, idx) => (
                       <AccordionItem key={idx} value={`feature-${idx}`}>
@@ -569,7 +573,7 @@ const CaseStudiesSection = memo(({ companyData, uiText }: { companyData: Company
                   <div className="flex items-start space-x-3">
                     <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-bold text-base text-green-800 mb-2">项目成果</h4>
+                      <h4 className="font-bold text-base text-green-800 mb-2">{uiText.cases.outcome}</h4>
                       <p className="text-base text-green-700 leading-relaxed font-medium">{caseStudy.outcome}</p>
                     </div>
                   </div>
