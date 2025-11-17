@@ -9,6 +9,20 @@
 
 ---
 
+## 📚 快速导航
+
+**新手必读：**
+- 🎯 [**配置指南**](./CONFIGURATION_GUIDE.md) - Logo/Favicon 配置、新项目快速上手
+- ⚡ [**快速参考**](./QUICK_REFERENCE.md) - 最关键的配置，一目了然
+- 🖼️ [**图片说明**](./public/images/README.md) - 图片资源使用指南
+
+**重点提示：**
+- 💡 **浏览器标签栏图标（Favicon）**：配置在 `src/app/layout.tsx` → `metadata.icons`，文件是 `public/uumi-logo.png`
+- 📝 **网站内容**：所有文字在 `src/data/companyData.json` 中，直接编辑即可
+- 🎨 **颜色主题**：在 `src/app/globals.css` 中修改 CSS 变量
+
+---
+
 ## 📋 目录
 
 1. [项目概览](#-项目概览)
