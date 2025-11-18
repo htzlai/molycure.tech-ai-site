@@ -60,8 +60,8 @@
 
 ```bash
 # 克隆仓库 | Clone repository
-git clone https://github.com/ethanone/scxingshilong.com.git
-cd scxingshilong.com
+git clone https://github.com/ethanone/scysx-ai-site.git
+cd scysx-ai-site
 
 # 安装依赖 | Install dependencies
 npm install
