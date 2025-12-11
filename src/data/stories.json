@@ -1,0 +1,173 @@
+{
+  "stories": [
+    {
+      "id": "1",
+      "title": {
+        "zh": "小兔子的胡萝卜园",
+        "en": "Little Rabbit's Carrot Garden"
+      },
+      "cover": "🥕",
+      "category": {
+        "zh": "友谊",
+        "en": "Friendship"
+      },
+      "ageRange": "3-6",
+      "duration": "5分钟",
+      "summary": {
+        "zh": "小兔子学会了分享，和朋友们一起种植了美丽的胡萝卜园。",
+        "en": "Little Rabbit learns to share and plants a beautiful carrot garden with friends."
+      },
+      "content": {
+        "zh": [
+          "从前，有一只小兔子叫小白，他非常喜欢胡萝卜。",
+          "小白有一个梦想：拥有一个属于自己的胡萝卜园。",
+          "每天，小白都会在花园里辛勤地工作，浇水、除草、施肥。",
+          "渐渐地，胡萝卜苗长出来了，绿油油的叶子在阳光下闪闪发光。",
+          "小松鼠、小鸟和小刺猬看到小白的花园，都很羡慕。",
+          "小白想了想，决定邀请朋友们一起来种植。",
+          "大家一起努力，花园变得更加美丽了。",
+          "收获的季节到了，小白和朋友们一起分享了美味的胡萝卜。",
+          "小白明白了：分享的快乐比独自拥有更美好！"
+        ],
+        "en": [
+          "Once upon a time, there was a little rabbit named Whitey who loved carrots very much.",
+          "Whitey had a dream: to have his own carrot garden.",
+          "Every day, Whitey worked hard in the garden, watering, weeding, and fertilizing.",
+          "Gradually, the carrot sprouts grew, with green leaves shining in the sunlight.",
+          "Little Squirrel, Little Bird, and Little Hedgehog saw Whitey's garden and were envious.",
+          "Whitey thought for a moment and decided to invite his friends to plant together.",
+          "Working together, the garden became even more beautiful.",
+          "When harvest time came, Whitey and his friends shared the delicious carrots together.",
+          "Whitey learned: the joy of sharing is more beautiful than having alone!"
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "title": {
+        "zh": "勇敢的小星星",
+        "en": "The Brave Little Star"
+      },
+      "cover": "⭐",
+      "category": {
+        "zh": "勇气",
+        "en": "Courage"
+      },
+      "ageRange": "4-7",
+      "duration": "6分钟",
+      "summary": {
+        "zh": "一颗小星星克服恐惧，帮助迷路的小动物找到回家的路。",
+        "en": "A little star overcomes fear and helps lost animals find their way home."
+      },
+      "content": {
+        "zh": [
+          "在遥远的天空中，有一颗小星星叫闪闪。",
+          "闪闪总是很害怕黑暗，一到晚上就躲在云朵后面。",
+          "有一天晚上，闪闪听到地面上传来哭泣声。",
+          "原来是一只小兔子迷路了，找不到回家的路。",
+          "闪闪虽然害怕，但还是鼓起勇气，从云朵后面跳了出来。",
+          "闪闪发出明亮的光芒，为小兔子照亮了回家的路。",
+          "小兔子安全地回到了家，非常感激闪闪。",
+          "从那以后，闪闪不再害怕黑暗了。",
+          "她明白了：帮助别人能让自己变得更勇敢！"
+        ],
+        "en": [
+          "In the distant sky, there was a little star named Sparkle.",
+          "Sparkle was always afraid of the dark and hid behind clouds at night.",
+          "One night, Sparkle heard crying from the ground below.",
+          "It was a little rabbit who was lost and couldn't find the way home.",
+          "Although afraid, Sparkle gathered courage and jumped out from behind the clouds.",
+          "Sparkle shone brightly, lighting the way home for the little rabbit.",
+          "The little rabbit safely returned home and was very grateful to Sparkle.",
+          "From then on, Sparkle was no longer afraid of the dark.",
+          "She learned: helping others makes you braver!"
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "title": {
+        "zh": "彩虹桥的约定",
+        "en": "The Rainbow Bridge Promise"
+      },
+      "cover": "🌈",
+      "category": {
+        "zh": "承诺",
+        "en": "Promise"
+      },
+      "ageRange": "5-8",
+      "duration": "7分钟",
+      "summary": {
+        "zh": "小动物们通过彩虹桥学会了信守承诺的重要性。",
+        "en": "Little animals learn the importance of keeping promises through the rainbow bridge."
+      },
+      "content": {
+        "zh": [
+          "森林里有一座神奇的彩虹桥，只有信守承诺的动物才能通过。",
+          "小狐狸、小鹿和小熊都想通过彩虹桥去看美丽的风景。",
+          "但是，他们必须先完成一个任务：帮助老树爷爷找到丢失的种子。",
+          "小狐狸答应了，但很快就忘记了，去玩了。",
+          "小鹿也答应了，但觉得太麻烦，放弃了。",
+          "只有小熊认真地寻找，不放弃，终于找到了种子。",
+          "当小熊把种子还给老树爷爷时，彩虹桥出现了。",
+          "小熊走过彩虹桥，看到了世界上最美丽的风景。",
+          "小狐狸和小鹿明白了：信守承诺才能获得真正的快乐！"
+        ],
+        "en": [
+          "In the forest, there was a magical rainbow bridge that only animals who kept their promises could cross.",
+          "Little Fox, Little Deer, and Little Bear all wanted to cross the rainbow bridge to see the beautiful scenery.",
+          "But first, they had to complete a task: help Grandpa Tree find his lost seeds.",
+          "Little Fox promised but soon forgot and went to play.",
+          "Little Deer also promised but found it too troublesome and gave up.",
+          "Only Little Bear searched seriously and didn't give up, finally finding the seeds.",
+          "When Little Bear returned the seeds to Grandpa Tree, the rainbow bridge appeared.",
+          "Little Bear crossed the rainbow bridge and saw the most beautiful scenery in the world.",
+          "Little Fox and Little Deer learned: keeping promises brings true happiness!"
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "title": {
+        "zh": "小象的第一次飞行",
+        "en": "Little Elephant's First Flight"
+      },
+      "cover": "🐘",
+      "category": {
+        "zh": "梦想",
+        "en": "Dreams"
+      },
+      "ageRange": "4-7",
+      "duration": "6分钟",
+      "summary": {
+        "zh": "小象通过努力和朋友的帮助，实现了飞行的梦想。",
+        "en": "Little Elephant achieves his dream of flying through effort and friends' help."
+      },
+      "content": {
+        "zh": [
+          "小象波波有一个特别的梦想：他想像小鸟一样在天空中飞翔。",
+          "其他动物都笑话他，说大象怎么可能飞起来呢？",
+          "但是波波不放弃，他每天都在练习。",
+          "小鸟们看到波波的努力，决定帮助他。",
+          "小鸟们用树叶和花朵做了一个美丽的热气球。",
+          "波波坐进热气球，慢慢地升上了天空。",
+          "波波看到了从未见过的美丽风景，非常开心。",
+          "他明白了：只要有梦想，努力和朋友的帮助，什么都有可能！",
+          "从那以后，波波经常和朋友们一起乘坐热气球去冒险。"
+        ],
+        "en": [
+          "Little Elephant BoBo had a special dream: he wanted to fly in the sky like birds.",
+          "Other animals laughed at him, saying how could an elephant fly?",
+          "But BoBo didn't give up and practiced every day.",
+          "The birds saw BoBo's efforts and decided to help him.",
+          "The birds made a beautiful hot air balloon with leaves and flowers.",
+          "BoBo got into the balloon and slowly rose into the sky.",
+          "BoBo saw beautiful scenery he had never seen before and was very happy.",
+          "He learned: with dreams, effort, and friends' help, anything is possible!",
+          "From then on, BoBo often went on adventures with his friends in the hot air balloon."
+        ]
+      }
+    }
+  ]
+}
+
