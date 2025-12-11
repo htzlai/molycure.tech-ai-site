@@ -13,20 +13,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "儿童故事屋 | 双语睡前故事与语音朗读",
-  description: "儿童故事屋提供双语睡前故事、语音朗读与安全无广告的阅读体验，陪伴孩子快乐成长，学习勇气、友爱与分享。",
-  keywords: ["儿童故事", "睡前故事", "双语故事", "亲子阅读", "语音朗读", "儿童寓言", "儿童教育"],
-  authors: [{ name: "Kids Story House" }],
+  title: "山月集文创工作室 | 自然美学与传统文化融合",
+  description: "山月集文创工作室，成立于2023年9月，坐标四川成都。以自然美学和传统文化为灵感，为年轻群体打造可使用、可收藏、可分享的文创产品——古风笔记本、毛笔套装、节气主题便利店、城市记忆冰箱贴、旅行手帐等。",
+  keywords: ["山月集文创工作室", "自然美学", "传统文化", "文创产品", "成都文创", "古风笔记本", "毛笔套装", "节气主题", "冰箱贴", "旅行手帐"],
+  authors: [{ name: "山月集文创工作室" }],
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "儿童故事屋 | 双语睡前故事",
-    description: "双语睡前故事 · 语音朗读 · 安全无广告 · 适合3-8岁儿童",
+    title: "山月集文创工作室 | 自然美学与传统文化融合",
+    description: "为年轻人打造可使用、可收藏、可分享的文创产品。总部成都，创始人林一一，12人团队。",
     url: "https://demo-ai-site.vercel.app",
-    siteName: "儿童故事屋",
+    siteName: "山月集文创工作室",
     locale: "zh-CN",
     type: "website",
   },

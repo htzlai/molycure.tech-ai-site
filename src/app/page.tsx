@@ -71,7 +71,7 @@ const LanguageToggle = memo(() => {
       >
         <BookOpen className="w-4 h-4" />
         <span className="text-sm font-semibold">
-          {language === "zh" ? "故事合集" : "Story Room"}
+          {language === "zh" ? "产品系列" : "Product Lines"}
         </span>
       </Link>
       <button
@@ -107,7 +107,7 @@ const Hero = memo(() => {
           >
             <Sparkles className="w-4 h-4 text-pink-500" />
             <span className="text-sm font-semibold text-gray-700">
-              {language === "zh" ? "儿童故事屋 · 温暖陪伴" : "Kids Story House · Cozy & Kind"}
+              {language === "zh" ? "山月集 · 自然美学 x 传统文化" : "Shanyue Studio · Nature & Heritage"}
             </span>
           </motion.div>
           <motion.h1
@@ -115,8 +115,8 @@ const Hero = memo(() => {
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-6"
           >
             {language === "zh"
-              ? "给孩子的温暖故事，陪伴每一次睡前时光"
-              : "Warm stories for kids, with you every bedtime"}
+              ? "为年轻一代，打造可使用、可收藏、可分享的文创体验"
+              : "Designing cultural goods you can use, keep, and share"}
           </motion.h1>
           <motion.p
             {...fadeInUp}
@@ -124,8 +124,8 @@ const Hero = memo(() => {
             className="text-lg sm:text-xl text-gray-700 max-w-2xl mb-8 leading-relaxed"
           >
             {language === "zh"
-              ? "精选双语故事、语音朗读和趣味插画，让孩子在快乐中学会勇敢、友爱与分享。"
-              : "Curated bilingual stories with voice reading and playful visuals to help kids learn courage, kindness, and sharing while having fun."}
+              ? "成立于 2023 年 9 月，坐标四川成都。山月集文创工作室由创始人林一一带领 12 人团队，以自然美学和传统文化为灵感，推出古风笔记本、毛笔套装、节气主题便利店、城市记忆冰箱贴、旅行手帐等产品。"
+              : "Founded Sep 2023 in Chengdu, Shanyue Studio (12-person team led by Lin Yiyi) blends nature aesthetics with Chinese heritage, crafting notebooks, brush sets, seasonal stationery, city-memory magnets, travel journals, and more for young creators."}
           </motion.p>
           <motion.div
             {...fadeInUp}
@@ -138,7 +138,7 @@ const Hero = memo(() => {
               className="px-8 py-6 text-base bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white shadow-lg"
             >
               <Link href="/stories">
-                {language === "zh" ? "开始讲故事" : "Start Reading"}
+                {language === "zh" ? "浏览产品系列" : "Explore Products"}
               </Link>
             </Button>
             <Button
@@ -148,7 +148,7 @@ const Hero = memo(() => {
               className="px-8 py-6 text-base border-pink-200 text-pink-600 hover:bg-pink-50"
             >
               <Link href="#features">
-                {language === "zh" ? "看看亮点" : "See Features"}
+                {language === "zh" ? "了解亮点" : "See Highlights"}
               </Link>
             </Button>
           </motion.div>
@@ -159,15 +159,15 @@ const Hero = memo(() => {
           >
             <span className="inline-flex items-center gap-2 px-3 py-2 bg-white border border-pink-100 rounded-full shadow-sm">
               <Heart className="w-4 h-4 text-pink-500" />
-              {language === "zh" ? "适合 3-8 岁" : "Ages 3-8"}
+              {language === "zh" ? "自然美学灵感" : "Nature-inspired"}
             </span>
             <span className="inline-flex items-center gap-2 px-3 py-2 bg-white border border-purple-100 rounded-full shadow-sm">
               <Volume2 className="w-4 h-4 text-purple-500" />
-              {language === "zh" ? "支持朗读" : "Voice Ready"}
+              {language === "zh" ? "传统文化融合" : "Heritage infused"}
             </span>
             <span className="inline-flex items-center gap-2 px-3 py-2 bg-white border border-blue-100 rounded-full shadow-sm">
               <ShieldCheck className="w-4 h-4 text-blue-500" />
-              {language === "zh" ? "安全无广告" : "Safe & Ad-free"}
+              {language === "zh" ? "适合年轻群体" : "Made for young creators"}
             </span>
           </motion.div>
         </div>
@@ -216,15 +216,15 @@ const Categories = memo(() => {
     <Section id="categories" className="bg-white">
       <motion.div {...fadeInUp} className="text-center mb-12">
         <p className="text-sm font-semibold text-pink-500 mb-2">
-          {language === "zh" ? "主题分类" : "Story Themes"}
+          {language === "zh" ? "产品灵感" : "Product Themes"}
         </p>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-          {language === "zh" ? "孩子最爱的故事类型" : "Stories Kids Love"}
+          {language === "zh" ? "自然与文化的多重表达" : "Nature meets culture"}
         </h2>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
           {language === "zh"
-            ? "按主题挑选故事，勇气、友谊、梦想、承诺……陪伴孩子的成长瞬间"
-            : "Pick by themes—courage, friendship, dreams, promises—to fit every bedtime mood."}
+            ? "从纸上书写到旅行纪念，每一件产品都承载山川、节气与城市记忆的灵感。"
+            : "From journaling to travel keepsakes, every piece carries landscapes, seasons, and urban memories."}
         </p>
       </motion.div>
       <motion.div
@@ -263,10 +263,10 @@ const FeaturedStories = memo(() => {
     <Section id="featured" className="bg-gradient-to-br from-purple-50 via-pink-50 to-white">
       <motion.div {...fadeInUp} className="text-center mb-12">
         <p className="text-sm font-semibold text-purple-500 mb-2">
-          {language === "zh" ? "精选故事" : "Featured"}
+          {language === "zh" ? "主打产品" : "Featured Products"}
         </p>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-          {language === "zh" ? "今晚读这几篇" : "Tonight's Picks"}
+          {language === "zh" ? "自然美学的日常提案" : "Everyday artifacts with nature flair"}
         </h2>
       </motion.div>
       <motion.div
@@ -323,27 +323,27 @@ const Features = memo(() => {
   const list = [
     {
       icon: Wand2,
-      title: language === "zh" ? "语音朗读" : "Voice Reading",
+      title: language === "zh" ? "自然质感" : "Nature textures",
       desc:
         language === "zh"
-          ? "点击即可朗读，爸妈可以解放双手，孩子也能自己听故事。"
-          : "Tap to listen—hands free for parents, fun for kids.",
+          ? "选用棉麻纸、竹纤维、可再生包装等材质，呈现触手可及的自然体验。"
+          : "Cotton-linen paper, bamboo fibers, and recyclable packs for a tangible nature feel.",
     },
     {
       icon: Heart,
-      title: language === "zh" ? "温暖价值观" : "Warm Values",
+      title: language === "zh" ? "文化融入" : "Culture infused",
       desc:
         language === "zh"
-          ? "勇气、友爱、分享、承诺，用故事播下善良的种子。"
-          : "Courage, kindness, sharing, promise—seeds of good values.",
+          ? "以节气、诗意山川、城市记忆为灵感，让年轻人把文化带进日常。"
+          : "Inspired by seasons, landscapes, and city memories so culture lives in daily life.",
     },
     {
       icon: Music,
-      title: language === "zh" ? "轻松氛围" : "Cozy Vibes",
+      title: language === "zh" ? "礼赠友好" : "Gift ready",
       desc:
         language === "zh"
-          ? "柔和色彩和动画，营造安全的阅读小天地。"
-          : "Soft colors and playful motions for a safe cozy space.",
+          ? "精致包装与定制小卡，既能自用，也能成为值得分享的礼物。"
+          : "Thoughtful packaging and inserts make every piece giftable and shareable.",
     },
   ];
 
@@ -392,27 +392,27 @@ const HowTo = memo(() => {
   const { language } = useLanguage();
   const steps = [
     {
-      title: language === "zh" ? "挑选故事" : "Pick a story",
+      title: language === "zh" ? "挑选系列" : "Choose a line",
       desc:
         language === "zh"
-          ? "在故事列表选择主题或直接点击首页推荐"
-          : "Choose a theme or tap a featured story.",
+          ? "在产品系列中选择你喜欢的主题：节气、旅行、城市记忆或书写工具。"
+          : "Pick a line—Seasons, Travel, City Memory, or Writing Essentials.",
       icon: BookOpen,
     },
     {
-      title: language === "zh" ? "点击朗读" : "Tap to play",
+      title: language === "zh" ? "感受质感" : "Feel the craft",
       desc:
         language === "zh"
-          ? "进入故事页后点击播放，自动分段朗读"
-          : "Hit play to listen, auto page-by-page.",
+          ? "了解材质、工艺与设计灵感，找到最贴合你日常的那一件。"
+          : "Discover materials, craft, and inspiration to match your daily ritual.",
       icon: Volume2,
     },
     {
-      title: language === "zh" ? "陪伴互动" : "Cozy together",
+      title: language === "zh" ? "分享故事" : "Share the story",
       desc:
         language === "zh"
-          ? "跟孩子聊聊故事里的勇气、友谊和分享"
-          : "Chat with your kid about courage and kindness.",
+          ? "下单或定制，并把产品背后的故事分享给朋友，一起体验文化与美学。"
+          : "Order or customize, then share the story behind it with friends.",
       icon: Heart,
     },
   ];
@@ -469,13 +469,13 @@ const CTA = memo(() => {
         <div>
           <h3 className="text-3xl sm:text-4xl font-extrabold mb-2">
             {language === "zh"
-              ? "一起开启故事时间吧！"
-              : "Start your story time now!"}
+              ? "把自然与文化带进你的日常"
+              : "Bring nature and heritage into your daily life"}
           </h3>
           <p className="text-lg text-white/90">
             {language === "zh"
-              ? "点击进入故事列表，挑一篇最合适今晚的故事。"
-              : "Jump into the story list and pick tonight's tale."}
+              ? "进入产品系列，选择一份可用、可收藏、可分享的文创礼物。"
+              : "Explore our lines and pick a cultural piece to use, keep, or share."}
           </p>
         </div>
         <Button
@@ -484,7 +484,7 @@ const CTA = memo(() => {
           className="px-8 py-6 text-base bg-white text-pink-600 hover:bg-gray-100 font-bold shadow-lg"
         >
           <Link href="/stories">
-            {language === "zh" ? "前往故事列表" : "Go to Stories"}
+            {language === "zh" ? "查看产品系列" : "View product lines"}
           </Link>
         </Button>
       </div>

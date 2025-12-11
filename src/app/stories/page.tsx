@@ -55,28 +55,28 @@ const StoriesHero = memo(({ language }: { language: string }) => (
           }}
           className="text-8xl mb-8"
         >
-          📖
+          🌙
         </motion.div>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-          {language === 'zh' ? '儿童故事屋' : 'Children\'s Story House'}
+          {language === 'zh' ? '山月集文创工作室' : 'Shanyue Cultural Studio'}
         </h1>
         <p className="text-xl sm:text-2xl text-gray-700 mb-8 font-medium">
           {language === 'zh' 
-            ? '精彩的故事，陪伴孩子快乐成长' 
-            : 'Wonderful stories to accompany children\'s happy growth'}
+            ? '自然美学 x 传统文化，为年轻人打造可使用、可收藏、可分享的文创产品'
+            : 'Nature aesthetics meets heritage, crafting useful, collectible, shareable goods for young creators'}
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-purple-500" />
-            <span>{language === 'zh' ? '精选故事' : 'Curated Stories'}</span>
+            <span>{language === 'zh' ? '精选产品线' : 'Curated lines'}</span>
           </div>
           <div className="flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-blue-500" />
-            <span>{language === 'zh' ? '双语阅读' : 'Bilingual Reading'}</span>
+            <span>{language === 'zh' ? '自然与文化' : 'Nature & culture'}</span>
           </div>
           <div className="flex items-center gap-2">
             <Users className="w-5 h-5 text-pink-500" />
-            <span>{language === 'zh' ? '适合3-8岁' : 'Ages 3-8'}</span>
+            <span>{language === 'zh' ? '12人团队·成都' : '12-person team · Chengdu'}</span>
           </div>
         </div>
       </motion.div>
@@ -138,7 +138,7 @@ const StoryCard = memo(({ story, language }: { story: Story; language: string })
           <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
             <div className="flex items-center gap-1">
               <Users className="w-4 h-4" />
-              <span>{language === 'zh' ? '适合' : 'Ages'} {story.ageRange}</span>
+              <span>{language === 'zh' ? '适用' : 'For'} {story.ageRange}</span>
             </div>
             <div className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
@@ -179,12 +179,12 @@ export default function StoriesPage() {
         <div className="container mx-auto max-w-7xl">
           <motion.div {...fadeInUp} className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-              {language === 'zh' ? '精选故事' : 'Featured Stories'}
+              {language === 'zh' ? '产品系列' : 'Product Lines'}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               {language === 'zh' 
-                ? '每个故事都蕴含着美好的道理，陪伴孩子健康成长' 
-                : 'Each story contains beautiful lessons to accompany children\'s healthy growth'}
+                ? '每件产品都带着自然与文化的灵感，既能日常使用，也值得收藏与分享。' 
+                : 'Each piece carries nature and cultural inspiration—made to use daily, keep, and share.'}
             </p>
           </motion.div>
 
@@ -206,10 +206,10 @@ export default function StoriesPage() {
       <footer className="bg-gradient-to-r from-pink-500 to-purple-500 text-white py-8 mt-16">
         <div className="container mx-auto max-w-7xl px-4 text-center">
           <p className="text-lg font-medium mb-2">
-            {language === 'zh' ? '让故事点亮孩子的童年' : 'Let stories light up children\'s childhood'}
+            {language === 'zh' ? '让自然与文化点亮你的日常' : 'Let nature and culture brighten your daily life'}
           </p>
           <p className="text-sm opacity-90">
-            {language === 'zh' ? '每天一个新故事，陪伴成长每一天' : 'A new story every day, accompanying growth every day'}
+            {language === 'zh' ? '山月集文创工作室 · 创始人林一一 · 12人团队 · 成都' : 'Shanyue Studio · Founder Lin Yiyi · 12-person team · Chengdu'}
           </p>
         </div>
       </footer>

@@ -115,11 +115,11 @@ export default function StoryReaderPage() {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 to-purple-100">
         <div className="text-center">
           <p className="text-xl text-gray-600 mb-4">
-            {language === 'zh' ? '故事未找到' : 'Story not found'}
+            {language === 'zh' ? '未找到对应产品' : 'Product not found'}
           </p>
           <Button asChild>
             <Link href="/stories">
-              {language === 'zh' ? '返回故事列表' : 'Back to Stories'}
+              {language === 'zh' ? '返回产品系列' : 'Back to Products'}
             </Link>
           </Button>
         </div>
@@ -143,7 +143,7 @@ export default function StoryReaderPage() {
               className="flex items-center gap-2 text-purple-600 hover:text-purple-700"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>{language === 'zh' ? '返回' : 'Back'}</span>
+              <span>{language === 'zh' ? '返回产品' : 'Back'}</span>
             </Button>
             <Link href="/">
               <Button variant="ghost" className="flex items-center gap-2 text-purple-600 hover:text-purple-700">
@@ -180,7 +180,7 @@ export default function StoryReaderPage() {
               {story.category[language as 'zh' | 'en']}
             </span>
             <span>•</span>
-            <span>{language === 'zh' ? '适合' : 'Ages'} {story.ageRange}</span>
+            <span>{language === 'zh' ? '适用' : 'For'} {story.ageRange}</span>
             <span>•</span>
             <span>{story.duration}</span>
           </div>
@@ -197,7 +197,7 @@ export default function StoryReaderPage() {
               <CardContent className="p-8 md:p-12">
                 <div className="text-center mb-6">
                   <span className="text-sm text-purple-600 font-medium">
-                    {language === 'zh' ? '第' : 'Page'} {currentPage + 1} / {totalPages}
+                    {language === 'zh' ? '段落' : 'Section'} {currentPage + 1} / {totalPages}
                   </span>
                 </div>
                 <motion.p
@@ -298,7 +298,7 @@ export default function StoryReaderPage() {
                 <BookOpen className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-bold text-lg text-gray-800 mb-2">
-                    {language === 'zh' ? '故事简介' : 'Story Summary'}
+                    {language === 'zh' ? '产品灵感' : 'Product Inspiration'}
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
                     {story.summary[language as 'zh' | 'en']}
