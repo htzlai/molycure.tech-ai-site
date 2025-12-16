@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -73,6 +74,26 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        {/* Dify Chatbot */}
+        <Script
+          id="dify-chat-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.difyChatbotConfig = {
+                token: 'tErbxwrLDlIeBMMR',
+                inputs: {},
+                systemVariables: {},
+                userVariables: {},
+              };
+            `,
+          }}
+        />
+        <Script
+          id="dify-chatbot-loader"
+          src="https://udify.app/embed.min.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

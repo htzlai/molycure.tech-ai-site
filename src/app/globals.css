@@ -528,6 +528,16 @@ img {
   image-rendering: crisp-edges;
 }
 
+/* Dify Chatbot bubble customization */
+#dify-chatbot-bubble-button {
+  background-color: #1C64F2 !important;
+}
+
+#dify-chatbot-bubble-window {
+  width: 24rem !important;
+  height: 40rem !important;
+}
+
 /* 优化选择文本 */
 ::selection {
   background: rgba(0, 0, 0, 0.12);
