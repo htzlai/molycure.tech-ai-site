@@ -5,23 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import {
-  Sparkles,
-  Brain,
-  Globe,
-  TrendingUp,
-  Users,
-  Languages,
-  ShieldCheck,
-  Workflow,
-  Zap,
-  Target,
-  Rocket,
-  CheckCircle2,
-} from "lucide-react";
-import storiesData from "@/data/stories.json";
+import { Sparkles, Brain, Globe, Users, Zap } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 24 },
@@ -131,12 +117,12 @@ Header.displayName = "Header";
 const Hero = memo(() => {
   const { language } = useLanguage();
   return (
-    <Section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-teal-50 to-cyan-50 min-h-[80vh] flex items-center">
+    <Section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-white min-h-[80vh] flex items-center">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -left-10 top-10 w-64 h-64 bg-blue-200/50 rounded-full blur-3xl" />
-        <div className="absolute right-0 bottom-0 w-72 h-72 bg-teal-200/60 rounded-full blur-3xl" />
-        <div className="absolute left-1/4 bottom-10 text-8xl opacity-20">🤖</div>
-        <div className="absolute right-16 top-16 text-7xl opacity-20">🌍</div>
+        <div className="absolute -left-10 top-10 w-64 h-64 bg-blue-200/40 rounded-full blur-3xl" />
+        <div className="absolute right-0 bottom-0 w-72 h-72 bg-cyan-200/50 rounded-full blur-3xl" />
+        <div className="absolute left-1/4 bottom-10 text-8xl opacity-15">🤖</div>
+        <div className="absolute right-16 top-16 text-7xl opacity-15">🌍</div>
       </div>
       <div className="relative grid lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -164,7 +150,7 @@ const Hero = memo(() => {
           >
             {language === "zh"
               ? "魔力奇是一家基于人工智能的智能体项目，专注帮助企业高效出海。依托大模型与智能体技术，我们为企业提供一站式出海解决方案，包括市场洞察、智能拓客、多语种沟通、合规风控与运营协同，助力企业低成本进入全球市场，提升获客效率与转化效果。"
-              : "Molycure is an AI-powered agent platform based in Singapore, dedicated to helping businesses expand globally. Leveraging large language models and intelligent agents, we provide comprehensive global expansion solutions including market insights, intelligent customer acquisition, multilingual communication, compliance & risk control, and operational collaboration."}
+              : "Molycure is an AI-powered agent platform based in Singapore, dedicated to helping businesses expand globally. Leveraging large models and intelligent agents, we offer one-stop solutions from market insights and customer acquisition to multilingual communication, compliance, and coordinated operations."}
           </motion.p>
           <motion.div
             {...fadeInUp}
@@ -216,28 +202,40 @@ const Hero = memo(() => {
         >
           <div className="absolute -top-6 -left-6 text-5xl">🚀</div>
           <div className="absolute -bottom-6 -right-6 text-5xl">💼</div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { icon: "📊", title: language === "zh" ? "市场洞察" : "Market Insights", desc: language === "zh" ? "深度分析全球市场趋势" : "Deep market analysis" },
-              { icon: "🎯", title: language === "zh" ? "智能拓客" : "Smart Acquisition", desc: language === "zh" ? "AI驱动的客户获取" : "AI-driven customer acquisition" },
-              { icon: "🌐", title: language === "zh" ? "多语种沟通" : "Multilingual", desc: language === "zh" ? "支持全球语言交流" : "Global language support" },
-              { icon: "🛡️", title: language === "zh" ? "合规风控" : "Compliance", desc: language === "zh" ? "确保合规运营" : "Ensure compliance" },
-            ].map((item, idx) => (
-              <Card
-                key={idx}
-                className="border-0 bg-gradient-to-br from-white to-blue-50 shadow-md hover:shadow-lg transition-all"
-              >
-                <CardContent className="p-4">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <div className="text-sm text-blue-600 font-semibold">
-                    {item.title}
-                  </div>
-                  <p className="text-xs text-gray-600 mt-2 line-clamp-2">
-                    {item.desc}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="space-y-4">
+            <p className="text-sm font-semibold text-gray-500">
+              {language === "zh"
+                ? "我们关注每一次出海尝试的实际结果，用数据说话。"
+                : "We focus on measurable outcomes for every expansion attempt."}
+            </p>
+            <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <div className="text-2xl font-extrabold text-blue-700">2.1x</div>
+                <p className="mt-1">
+                  {language === "zh" ? "线索转化效率提升" : "Lead conversion lift"}
+                </p>
+              </div>
+              <div>
+                <div className="text-2xl font-extrabold text-teal-700">
+                  {language === "zh" ? "4-8 周" : "4-8 weeks"}
+                </div>
+                <p className="mt-1">
+                  {language === "zh" ? "典型方案落地周期" : "Typical go-live cycle"}
+                </p>
+              </div>
+              <div>
+                <div className="text-2xl font-extrabold text-blue-700">30-40%</div>
+                <p className="mt-1">
+                  {language === "zh" ? "节省一线人力成本" : "Reduction in front-line costs"}
+                </p>
+              </div>
+              <div>
+                <div className="text-2xl font-extrabold text-teal-700">100+</div>
+                <p className="mt-1">
+                  {language === "zh" ? "支持多语种沟通" : "Supported languages"}
+                </p>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -246,472 +244,127 @@ const Hero = memo(() => {
 });
 Hero.displayName = "Hero";
 
-const Categories = memo(() => {
-  const { language } = useLanguage();
-  const services = [
-    { name: language === "zh" ? "市场洞察" : "Market Insights", icon: TrendingUp, border: "border-blue-100", bg: "bg-blue-50", iconBg: "bg-blue-100", iconColor: "text-blue-600" },
-    { name: language === "zh" ? "智能拓客" : "Smart Acquisition", icon: Target, border: "border-teal-100", bg: "bg-teal-50", iconBg: "bg-teal-100", iconColor: "text-teal-600" },
-    { name: language === "zh" ? "多语种沟通" : "Multilingual", icon: Languages, border: "border-cyan-100", bg: "bg-cyan-50", iconBg: "bg-cyan-100", iconColor: "text-cyan-600" },
-    { name: language === "zh" ? "合规风控" : "Compliance", icon: ShieldCheck, border: "border-indigo-100", bg: "bg-indigo-50", iconBg: "bg-indigo-100", iconColor: "text-indigo-600" },
-    { name: language === "zh" ? "运营协同" : "Operations", icon: Workflow, border: "border-sky-100", bg: "bg-sky-50", iconBg: "bg-sky-100", iconColor: "text-sky-600" },
-    { name: language === "zh" ? "AI智能体" : "AI Agents", icon: Brain, border: "border-blue-100", bg: "bg-blue-50", iconBg: "bg-blue-100", iconColor: "text-blue-600" },
-  ];
-
-  return (
-    <Section id="categories" className="bg-white">
-      <motion.div {...fadeInUp} className="text-center mb-12">
-        <p className="text-sm font-semibold text-blue-600 mb-2">
-          {language === "zh" ? "核心服务" : "Core Services"}
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-          {language === "zh" ? "一站式全球出海解决方案" : "Comprehensive Global Expansion Solutions"}
-        </h2>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-          {language === "zh"
-            ? "从市场分析到客户获取，从多语言沟通到合规运营，我们提供全方位的智能出海服务。"
-            : "From market analysis to customer acquisition, multilingual communication to compliance operations, we provide comprehensive intelligent global expansion services."}
-        </p>
-      </motion.div>
-      <motion.div
-        variants={staggerContainer}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-40px" }}
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4"
-      >
-        {services.map((service) => {
-          const Icon = service.icon;
-          return (
-            <motion.div key={service.name} variants={fadeInUp}>
-              <Card className={`${service.border} bg-gradient-to-br from-white ${service.bg} hover:shadow-lg transition-all h-full`}>
-                <CardContent className="p-4 text-center flex flex-col items-center gap-3">
-                  <div className={`w-12 h-12 rounded-2xl ${service.iconBg} flex items-center justify-center`}>
-                    <Icon className={`w-6 h-6 ${service.iconColor}`} />
-                  </div>
-                  <div className="text-sm font-semibold text-gray-800">{service.name}</div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          );
-        })}
-      </motion.div>
-
-      <motion.div
-        {...fadeInUp}
-        className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4"
-      >
-        {[
-          {
-            title: language === "zh" ? "低成本试水" : "Lean Market Entry",
-            desc:
-              language === "zh"
-                ? "以最小可行方案（MVP）验证市场信号，智能体自动生成话术、名单与节奏，2 周内拿到首批反馈。"
-                : "Validate signals with an MVP: agents auto-build scripts, lists, and cadences to capture first feedback in 2 weeks.",
-            icon: Sparkles,
-          },
-          {
-            title: language === "zh" ? "多语种触达" : "Multilingual Touchpoints",
-            desc:
-              language === "zh"
-                ? "英语、马来语、印尼语、泰语同步上线，智能体自动翻译、润色并适配当地表达，降低沟通摩擦。"
-                : "English, Malay, Indonesian, Thai out of the box. Agents translate, localize, and adapt tone to cut friction.",
-            icon: Languages,
-          },
-          {
-            title: language === "zh" ? "合规护航" : "Compliance Guardrails",
-            desc:
-              language === "zh"
-                ? "内置 PDPA/GDPR 规则、退订与 DNC 校验，风控智能体实时拦截高风险操作，保障早期试错安全。"
-                : "Built-in PDPA/GDPR, unsubscribe, and DNC checks; risk agents block unsafe actions so early GTM stays compliant.",
-            icon: ShieldCheck,
-          },
-        ].map((item) => {
-          const Icon = item.icon;
-          return (
-            <Card
-              key={item.title}
-              className="h-full border-blue-100 bg-gradient-to-br from-white to-blue-50/50 shadow-sm hover:shadow-md transition-all"
-            >
-              <CardContent className="p-5 flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-blue-600" />
-                </div>
-                <div className="space-y-1">
-                  <div className="font-semibold text-gray-900">{item.title}</div>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
-      </motion.div>
-    </Section>
-  );
-});
-Categories.displayName = "Categories";
-
-const FeaturedStories = memo(() => {
-  const { language } = useLanguage();
-  const solutions = [
-    {
-      id: "1",
-      icon: "📊",
-      title: language === "zh" ? "市场洞察分析" : "Market Intelligence",
-      category: language === "zh" ? "数据分析" : "Data Analytics",
-      summary: language === "zh" 
-        ? "基于大模型深度分析全球市场趋势，识别商机与风险，为企业出海决策提供数据支撑。"
-        : "Deep analysis of global market trends using large language models, identifying opportunities and risks to support global expansion decisions.",
-    },
-    {
-      id: "2",
-      icon: "🎯",
-      title: language === "zh" ? "智能客户获取" : "Intelligent Customer Acquisition",
-      category: language === "zh" ? "智能拓客" : "Smart Outreach",
-      summary: language === "zh"
-        ? "AI智能体自动识别潜在客户，个性化沟通策略，大幅提升获客效率与转化率。"
-        : "AI agents automatically identify potential customers with personalized communication strategies, significantly improving acquisition efficiency and conversion rates.",
-    },
-    {
-      id: "3",
-      icon: "🌐",
-      title: language === "zh" ? "多语种智能沟通" : "Multilingual Communication",
-      category: language === "zh" ? "语言服务" : "Language Services",
-      summary: language === "zh"
-        ? "支持100+语言实时翻译与本地化沟通，打破语言壁垒，实现全球无障碍交流。"
-        : "Support for 100+ languages with real-time translation and localized communication, breaking language barriers for seamless global interaction.",
-    },
-  ];
-
-  return (
-    <Section id="featured" className="bg-gradient-to-br from-blue-50 via-teal-50 to-white">
-      <motion.div {...fadeInUp} className="text-center mb-12">
-        <p className="text-sm font-semibold text-blue-600 mb-2">
-          {language === "zh" ? "核心解决方案" : "Core Solutions"}
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-          {language === "zh" ? "AI驱动的智能出海服务" : "AI-Powered Global Expansion Services"}
-        </h2>
-      </motion.div>
-      <motion.div
-        variants={staggerContainer}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-40px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
-      >
-        {solutions.map((solution) => (
-          <motion.div key={solution.id} variants={fadeInUp}>
-            <Card className="h-full border-blue-100 bg-white shadow-md hover:shadow-xl transition-all">
-              <CardHeader className="p-6 pb-3 flex items-center gap-3">
-                <div className="text-4xl">{solution.icon}</div>
-                <div>
-                  <CardTitle className="text-xl text-gray-900">
-                    {solution.title}
-                  </CardTitle>
-                  <p className="text-sm text-blue-600 font-semibold">
-                    {solution.category}
-                  </p>
-                </div>
-              </CardHeader>
-              <CardContent className="px-6 pb-6">
-                <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">
-                  {solution.summary}
-                </p>
-                <Button
-                  asChild
-                  className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white"
-                >
-                  <Link href={`/stories/${solution.id}`}>
-                    {language === "zh" ? "了解更多" : "Learn More"}
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <motion.div
-        {...fadeInUp}
-        transition={{ delay: 0.15 }}
-        className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6"
-      >
-        <Card className="border-teal-100 bg-gradient-to-br from-white to-teal-50 shadow-sm">
-          <CardContent className="p-6 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-semibold">
-              <Zap className="w-4 h-4" />
-              {language === "zh" ? "交付亮点" : "Delivery Highlights"}
-            </div>
-            <ul className="space-y-2 text-gray-700 leading-relaxed text-sm">
-              <li>• {language === "zh" ? "多智能体并行：市场洞察、拓客、客服、法务协同运转" : "Parallel agents across intel, outreach, CS, and legal for synchronized ops."}</li>
-              <li>• {language === "zh" ? "本地化资产：脚本、模板、FAQ、报价单均支持多语与多市场差分" : "Localized assets: scripts, templates, FAQs, quotes tuned per language/market."}</li>
-              <li>• {language === "zh" ? "合规默认开启：DNC / GDPR / PDPA 校验，自动退订与话术审查" : "Compliance by default: DNC/GDPR/PDPA checks with auto opt-out and tone guardrails."}</li>
-              <li>• {language === "zh" ? "透明度：看板实时展示阶段、转化率、风险提示与owner" : "Transparency: live board with stages, conversion rates, risk alerts, and owners."}</li>
-            </ul>
-          </CardContent>
-        </Card>
-        <Card className="border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-sm">
-          <CardContent className="p-6 grid grid-cols-2 gap-4 text-center">
-            {[
-              {
-                label: language === "zh" ? "线索转化提升" : "Lead Conversion Lift",
-                value: "2.1x",
-              },
-              {
-                label: language === "zh" ? "上线周期" : "Go-live",
-                value: language === "zh" ? "4-8 周" : "4-8 wks",
-              },
-              {
-                label: language === "zh" ? "节省人力" : "Headcount Saved",
-                value: language === "zh" ? "30-40%" : "30-40%",
-              },
-              {
-                label: language === "zh" ? "多语覆盖" : "Languages",
-                value: "100+",
-              },
-            ].map((item) => (
-              <div key={item.label} className="p-3 rounded-2xl bg-white shadow-sm border border-blue-100">
-                <div className="text-2xl font-extrabold text-blue-700">{item.value}</div>
-                <div className="text-xs text-gray-600 mt-1">{item.label}</div>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </motion.div>
-    </Section>
-  );
-});
-FeaturedStories.displayName = "FeaturedStories";
-
-const Features = memo(() => {
-  const { language } = useLanguage();
-  const list = [
-    {
-      icon: Brain,
-      title: language === "zh" ? "AI智能体技术" : "AI Agent Technology",
-      desc:
-        language === "zh"
-          ? "基于先进的大语言模型，构建智能体系统，实现自动化、智能化的业务处理与决策支持。"
-          : "Built on advanced large language models, our agent system enables automated, intelligent business processing and decision support.",
-    },
-    {
-      icon: Globe,
-      title: language === "zh" ? "全球市场覆盖" : "Global Market Reach",
-      desc:
-        language === "zh"
-          ? "支持全球200+国家和地区，深度理解不同市场的文化、法规与商业环境，助力企业精准出海。"
-          : "Supporting 200+ countries and regions, with deep understanding of diverse market cultures, regulations, and business environments for precise global expansion.",
-    },
-    {
-      icon: Zap,
-      title: language === "zh" ? "高效低成本" : "Efficient & Cost-Effective",
-      desc:
-        language === "zh"
-          ? "通过AI自动化大幅降低人力成本，提升运营效率，让中小企业也能轻松实现全球化布局。"
-          : "Significantly reduce labor costs through AI automation, improving operational efficiency, enabling SMEs to easily achieve global expansion.",
-    },
-  ];
-
-  return (
-    <Section id="features" className="bg-white">
-      <motion.div {...fadeInUp} className="text-center mb-12">
-        <p className="text-sm font-semibold text-teal-600 mb-2">
-          {language === "zh" ? "核心优势" : "Core Advantages"}
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-          {language === "zh" ? "为什么选择魔力奇" : "Why Choose Molycure"}
-        </h2>
-      </motion.div>
-      <motion.div
-        variants={staggerContainer}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-40px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
-      >
-        {list.map((item) => {
-          const Icon = item.icon;
-          return (
-            <motion.div key={item.title} variants={fadeInUp}>
-              <Card className="h-full border-teal-100 bg-gradient-to-br from-white to-teal-50/60 shadow-sm hover:shadow-lg transition-all">
-                <CardContent className="p-6 flex flex-col gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <CardTitle className="text-xl text-gray-900">
-                    {item.title}
-                  </CardTitle>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          );
-        })}
-      </motion.div>
-
-      <motion.div
-        {...fadeInUp}
-        transition={{ delay: 0.15 }}
-        className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4"
-      >
-        {[
-          {
-            title: language === "zh" ? "自动化率" : "Automation",
-            value: "65%",
-            desc:
-              language === "zh"
-                ? "外联、客服、法务草拟等重复工作交由智能体完成，团队聚焦决策与关系经营。"
-                : "Outreach, CS, and legal drafts automated so teams focus on decisions and relationships.",
-          },
-          {
-            title: language === "zh" ? "获客成本下降" : "CAC Down",
-            value: "30%",
-            desc:
-              language === "zh"
-                ? "渠道与脚本实时A/B，预算向高ROI渠道倾斜，降低整体获客成本。"
-                : "Live A/B on channels and scripts shifts budget to ROI-positive paths, cutting CAC.",
-          },
-          {
-            title: language === "zh" ? "响应时间" : "Response Time",
-            value: "30s",
-            desc:
-              language === "zh"
-                ? "多语智能体7x24在线，联动退订与敏感词审查，快速且合规。"
-                : "24/7 multilingual agents with opt-out and tone guardrails keep responses fast and compliant.",
-          },
-        ].map((item) => (
-          <Card
-            key={item.title}
-            className="h-full border-teal-100 bg-gradient-to-br from-white to-teal-50 shadow-sm"
-          >
-            <CardContent className="p-5 space-y-2">
-              <div className="text-sm text-teal-700 font-semibold">{item.title}</div>
-              <div className="text-3xl font-extrabold text-gray-900">{item.value}</div>
-              <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </motion.div>
-    </Section>
-  );
-});
-Features.displayName = "Features";
-
-const HowTo = memo(() => {
-  const { language } = useLanguage();
-  const steps = [
-    {
-      title: language === "zh" ? "需求分析" : "Needs Analysis",
-      desc:
-        language === "zh"
-          ? "深入了解您的业务目标、目标市场与出海需求，制定个性化的出海策略。"
-          : "Deep understanding of your business goals, target markets, and expansion needs to develop personalized global expansion strategies.",
-      icon: Target,
-    },
-    {
-      title: language === "zh" ? "方案部署" : "Solution Deployment",
-      desc:
-        language === "zh"
-          ? "快速部署AI智能体系统，配置市场洞察、拓客、沟通等核心功能模块。"
-          : "Rapid deployment of AI agent systems, configuring core modules including market insights, customer acquisition, and communication.",
-      icon: Rocket,
-    },
-    {
-      title: language === "zh" ? "持续优化" : "Continuous Optimization",
-      desc:
-        language === "zh"
-          ? "实时监控运营数据，AI智能体持续学习优化，不断提升获客效率与转化效果。"
-          : "Real-time monitoring of operational data, with AI agents continuously learning and optimizing to improve acquisition efficiency and conversion rates.",
-      icon: TrendingUp,
-    },
-  ];
-
-  return (
-    <Section id="how" className="bg-gradient-to-br from-cyan-50 via-blue-50 to-white">
-      <motion.div {...fadeInUp} className="text-center mb-12">
-        <p className="text-sm font-semibold text-cyan-600 mb-2">
-          {language === "zh" ? "三步开启" : "3 Simple Steps"}
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-          {language === "zh" ? "快速开启全球出海之旅" : "Start Your Global Expansion Journey"}
-        </h2>
-      </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {steps.map((step, idx) => {
-          const Icon = step.icon;
-          return (
-            <motion.div
-              key={step.title}
-              {...fadeInUp}
-              transition={{ delay: idx * 0.05 }}
-            >
-              <Card className="h-full border-cyan-100 bg-white shadow-md hover:shadow-xl transition-all">
-                <CardContent className="p-6 flex flex-col gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-cyan-100 flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-cyan-600" />
-                    </div>
-                    <div className="text-3xl font-extrabold text-cyan-600">
-                      {idx + 1}
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl text-gray-900">
-                    {step.title}
-                  </CardTitle>
-                  <p className="text-gray-600 leading-relaxed">{step.desc}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          );
-        })}
-      </div>
-    </Section>
-  );
-});
-HowTo.displayName = "HowTo";
-
-const CTA = memo(() => {
+const SolutionSection = memo(() => {
   const { language } = useLanguage();
   return (
-    <Section className="bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-none">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-        <div>
-          <h3 className="text-3xl sm:text-4xl font-extrabold mb-2">
-            {language === "zh"
-              ? "开启您的全球出海之旅"
-              : "Start Your Global Expansion Journey"}
-          </h3>
-          <p className="text-lg text-white/90">
-            {language === "zh"
-              ? "联系我们的专业团队，获取定制化的AI智能体出海解决方案，助力企业低成本高效进入全球市场。"
-              : "Contact our professional team for customized AI agent solutions to help your business efficiently enter global markets at low cost."}
+    <Section
+      id="features"
+      className="bg-gradient-to-b from-white via-blue-50/40 to-white border-t border-blue-50"
+    >
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <motion.div {...fadeInUp} className="space-y-6">
+          <p className="text-sm font-semibold text-blue-600">
+            {language === "zh" ? "一站式出海服务" : "One-stop Expansion"}
           </p>
-        </div>
-        <Button
-          asChild
-          size="lg"
-          className="px-8 py-6 text-base bg-white text-blue-600 hover:bg-gray-100 font-bold shadow-lg"
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-snug">
+            {language === "zh"
+              ? "从市场洞察到运营协同，\n用一套智能体系统跑通出海全流程"
+              : "From market intelligence to operations,\nrun your entire expansion with one agent system."}
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            {language === "zh"
+              ? "像农夫山泉强调“水源地”，魔力奇强调的是“数据与智能体”。我们以真实数据驱动决策，用可解释的智能体编排替代零散工具，帮助团队看清每一次投放、每一封邮件、每一通外呼背后的效果。"
+              : "Just as a water brand focuses on its source, Molycure focuses on data and agents. We replace fragmented tools with explainable agent orchestration so every campaign, email, and call is traceable and optimizable."}
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Card className="border-blue-100 shadow-sm">
+              <CardContent className="p-5 space-y-2">
+                <div className="flex items-center gap-2 text-sm font-semibold text-blue-700">
+                  <Sparkles className="w-4 h-4" />
+                  {language === "zh" ? "品牌与市场" : "Brand & Market"}
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {language === "zh"
+                    ? "基于公开数据、社交声量与行业报告，快速建立目标区域的机会图谱和品牌定位建议。"
+                    : "Use open data, social signals, and industry reports to map opportunities and craft positioning for target regions."}
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-blue-100 shadow-sm">
+              <CardContent className="p-5 space-y-2">
+                <div className="flex items-center gap-2 text-sm font-semibold text-blue-700">
+                  <Globe className="w-4 h-4" />
+                  {language === "zh" ? "获客与沟通" : "Acquisition & CX"}
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {language === "zh"
+                    ? "多语种外联、站内外客服与社媒私信统一由智能体协同处理，保证语气统一、合规可控。"
+                    : "Multilingual outreach, support, and DMs handled by agents so tone and compliance stay consistent."}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="px-8 py-6 text-base bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white shadow-lg"
+            >
+              <Link href="/stories">
+                {language === "zh" ? "查看典型出海方案" : "View Typical Playbooks"}
+              </Link>
+            </Button>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Users className="w-4 h-4 text-blue-600" />
+              <span>
+                {language === "zh"
+                  ? "适用于 B2B SaaS、跨境电商与高客单制造企业"
+                  : "Designed for B2B SaaS, cross-border brands, and industrial vendors"}
+              </span>
+            </div>
+          </div>
+        </motion.div>
+        <motion.div
+          {...fadeInUp}
+          transition={{ delay: 0.15 }}
+          className="relative h-full flex items-center justify-center"
         >
-          <Link href="/stories">
-            {language === "zh" ? "立即咨询" : "Contact Us"}
-          </Link>
-        </Button>
+          <div className="relative w-full max-w-md">
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-blue-100 shadow-lg bg-black">
+              <Image
+                src="/molycure-logo.png"
+                alt="Molycure AI agents"
+                width={800}
+                height={600}
+                className="h-full w-full object-contain bg-black"
+              />
+            </div>
+            <div className="absolute -bottom-6 left-6 right-6">
+              <Card className="border-blue-100 shadow-md bg-white/95 backdrop-blur">
+                <CardContent className="p-4 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                      {language === "zh" ? "实时看板" : "Live Board"}
+                    </p>
+                    <p className="text-sm text-gray-800">
+                      {language === "zh"
+                        ? "一眼看到每个市场的线索、转化与风险提示"
+                        : "See leads, conversions, and risk alerts per market at a glance."}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg font-extrabold text-blue-700">24/7</div>
+                    <p className="text-xs text-gray-500">
+                      {language === "zh" ? "智能体在线" : "Agents online"}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </Section>
   );
 });
-CTA.displayName = "CTA";
+SolutionSection.displayName = "SolutionSection";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
       <Hero />
-      <Categories />
-      <FeaturedStories />
-      <Features />
-      <HowTo />
-      <CTA />
+      <SolutionSection />
     </main>
   );
 }
