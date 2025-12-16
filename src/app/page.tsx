@@ -295,6 +295,56 @@ const Categories = memo(() => {
           );
         })}
       </motion.div>
+
+      <motion.div
+        {...fadeInUp}
+        className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4"
+      >
+        {[
+          {
+            title: language === "zh" ? "低成本试水" : "Lean Market Entry",
+            desc:
+              language === "zh"
+                ? "以最小可行方案（MVP）验证市场信号，智能体自动生成话术、名单与节奏，2 周内拿到首批反馈。"
+                : "Validate signals with an MVP: agents auto-build scripts, lists, and cadences to capture first feedback in 2 weeks.",
+            icon: Sparkles,
+          },
+          {
+            title: language === "zh" ? "多语种触达" : "Multilingual Touchpoints",
+            desc:
+              language === "zh"
+                ? "英语、马来语、印尼语、泰语同步上线，智能体自动翻译、润色并适配当地表达，降低沟通摩擦。"
+                : "English, Malay, Indonesian, Thai out of the box. Agents translate, localize, and adapt tone to cut friction.",
+            icon: Languages,
+          },
+          {
+            title: language === "zh" ? "合规护航" : "Compliance Guardrails",
+            desc:
+              language === "zh"
+                ? "内置 PDPA/GDPR 规则、退订与 DNC 校验，风控智能体实时拦截高风险操作，保障早期试错安全。"
+                : "Built-in PDPA/GDPR, unsubscribe, and DNC checks; risk agents block unsafe actions so early GTM stays compliant.",
+            icon: ShieldCheck,
+          },
+        ].map((item) => {
+          const Icon = item.icon;
+          return (
+            <Card
+              key={item.title}
+              className="h-full border-blue-100 bg-gradient-to-br from-white to-blue-50/50 shadow-sm hover:shadow-md transition-all"
+            >
+              <CardContent className="p-5 flex gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-blue-600" />
+                </div>
+                <div className="space-y-1">
+                  <div className="font-semibold text-gray-900">{item.title}</div>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </motion.div>
     </Section>
   );
 });
@@ -380,6 +430,54 @@ const FeaturedStories = memo(() => {
           </motion.div>
         ))}
       </motion.div>
+
+      <motion.div
+        {...fadeInUp}
+        transition={{ delay: 0.15 }}
+        className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
+        <Card className="border-teal-100 bg-gradient-to-br from-white to-teal-50 shadow-sm">
+          <CardContent className="p-6 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-semibold">
+              <Zap className="w-4 h-4" />
+              {language === "zh" ? "交付亮点" : "Delivery Highlights"}
+            </div>
+            <ul className="space-y-2 text-gray-700 leading-relaxed text-sm">
+              <li>• {language === "zh" ? "多智能体并行：市场洞察、拓客、客服、法务协同运转" : "Parallel agents across intel, outreach, CS, and legal for synchronized ops."}</li>
+              <li>• {language === "zh" ? "本地化资产：脚本、模板、FAQ、报价单均支持多语与多市场差分" : "Localized assets: scripts, templates, FAQs, quotes tuned per language/market."}</li>
+              <li>• {language === "zh" ? "合规默认开启：DNC / GDPR / PDPA 校验，自动退订与话术审查" : "Compliance by default: DNC/GDPR/PDPA checks with auto opt-out and tone guardrails."}</li>
+              <li>• {language === "zh" ? "透明度：看板实时展示阶段、转化率、风险提示与owner" : "Transparency: live board with stages, conversion rates, risk alerts, and owners."}</li>
+            </ul>
+          </CardContent>
+        </Card>
+        <Card className="border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-sm">
+          <CardContent className="p-6 grid grid-cols-2 gap-4 text-center">
+            {[
+              {
+                label: language === "zh" ? "线索转化提升" : "Lead Conversion Lift",
+                value: "2.1x",
+              },
+              {
+                label: language === "zh" ? "上线周期" : "Go-live",
+                value: language === "zh" ? "4-8 周" : "4-8 wks",
+              },
+              {
+                label: language === "zh" ? "节省人力" : "Headcount Saved",
+                value: language === "zh" ? "30-40%" : "30-40%",
+              },
+              {
+                label: language === "zh" ? "多语覆盖" : "Languages",
+                value: "100+",
+              },
+            ].map((item) => (
+              <div key={item.label} className="p-3 rounded-2xl bg-white shadow-sm border border-blue-100">
+                <div className="text-2xl font-extrabold text-blue-700">{item.value}</div>
+                <div className="text-xs text-gray-600 mt-1">{item.label}</div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </motion.div>
     </Section>
   );
 });
@@ -449,6 +547,50 @@ const Features = memo(() => {
             </motion.div>
           );
         })}
+      </motion.div>
+
+      <motion.div
+        {...fadeInUp}
+        transition={{ delay: 0.15 }}
+        className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4"
+      >
+        {[
+          {
+            title: language === "zh" ? "自动化率" : "Automation",
+            value: "65%",
+            desc:
+              language === "zh"
+                ? "外联、客服、法务草拟等重复工作交由智能体完成，团队聚焦决策与关系经营。"
+                : "Outreach, CS, and legal drafts automated so teams focus on decisions and relationships.",
+          },
+          {
+            title: language === "zh" ? "获客成本下降" : "CAC Down",
+            value: "30%",
+            desc:
+              language === "zh"
+                ? "渠道与脚本实时A/B，预算向高ROI渠道倾斜，降低整体获客成本。"
+                : "Live A/B on channels and scripts shifts budget to ROI-positive paths, cutting CAC.",
+          },
+          {
+            title: language === "zh" ? "响应时间" : "Response Time",
+            value: "30s",
+            desc:
+              language === "zh"
+                ? "多语智能体7x24在线，联动退订与敏感词审查，快速且合规。"
+                : "24/7 multilingual agents with opt-out and tone guardrails keep responses fast and compliant.",
+          },
+        ].map((item) => (
+          <Card
+            key={item.title}
+            className="h-full border-teal-100 bg-gradient-to-br from-white to-teal-50 shadow-sm"
+          >
+            <CardContent className="p-5 space-y-2">
+              <div className="text-sm text-teal-700 font-semibold">{item.title}</div>
+              <div className="text-3xl font-extrabold text-gray-900">{item.value}</div>
+              <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+            </CardContent>
+          </Card>
+        ))}
       </motion.div>
     </Section>
   );
