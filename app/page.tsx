@@ -24,6 +24,10 @@ import CometBackground from '@/components/CometBackground'
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [typedText, setTypedText] = useState('')
+  const [showCursor, setShowCursor] = useState(true)
+  
+  const fullText = '构建可靠硬件，释放行业智能'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +35,22 @@ export default function Home() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // 打字机效果
+  useEffect(() => {
+    let index = 0
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setTypedText(fullText.slice(0, index))
+        index++
+      } else {
+        clearInterval(timer)
+        // 打字完成后闪烁光标几次然后隐藏
+        setTimeout(() => setShowCursor(false), 2000)
+      }
+    }, 120)
+    return () => clearInterval(timer)
   }, [])
 
   // 核心产品与方案 - 6个
@@ -181,9 +201,18 @@ export default function Home() {
       <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto text-center w-full">
           <div className="animate-fade-in">
-            <div className="inline-block mb-6 px-5 py-3 rounded-lg bg-gray-800/60 border border-gray-700/50 backdrop-blur-sm">
-              <div className="text-gray-200 text-sm font-medium tracking-wide">构建可靠硬件，释放行业智能</div>
-              <div className="text-gray-500 text-xs mt-1 tracking-wider">Building reliable hardware. Enabling industry intelligence.</div>
+            <div className="mb-8">
+              {/* 中文标语 - 打字机效果 */}
+              <div className="text-xl md:text-2xl font-medium tracking-wide text-white mb-3 h-8">
+                {typedText}
+                <span className={`inline-block w-0.5 h-6 bg-blue-400 ml-1 align-middle ${showCursor ? 'animate-pulse' : 'opacity-0'}`}></span>
+              </div>
+              {/* 英文标语 - 流光效果 */}
+              <div className="text-sm md:text-base tracking-wider">
+                <span className="bg-gradient-to-r from-gray-400 via-blue-400 to-gray-400 bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent font-medium">
+                  Building reliable hardware. Enabling industry intelligence.
+                </span>
+              </div>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               AI+硬件集成
