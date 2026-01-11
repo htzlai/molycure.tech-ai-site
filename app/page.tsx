@@ -181,8 +181,9 @@ export default function Home() {
       <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto text-center w-full">
           <div className="animate-fade-in">
-            <div className="inline-block mb-6 px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/30">
-              <span className="text-blue-300 text-sm font-medium">🚀 硬件筑基 · 智能赋能 · 让AI落地每一个行业场景</span>
+            <div className="inline-block mb-6 px-5 py-3 rounded-lg bg-gray-800/60 border border-gray-700/50 backdrop-blur-sm">
+              <div className="text-gray-200 text-sm font-medium tracking-wide">构建可靠硬件，释放行业智能</div>
+              <div className="text-gray-500 text-xs mt-1 tracking-wider">Building reliable hardware. Enabling industry intelligence.</div>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               AI+硬件集成
@@ -343,7 +344,7 @@ export default function Home() {
                 <span className="text-white font-medium">专业团队支撑：</span>核心成员具备多年硬件架构设计与行业AI方案落地经验，精通多架构硬件优化、智能系统协同调试，深度理解本地行业需求，提供全流程闭环服务。
               </p>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                <span className="text-white font-medium">立足本地，服务西南。</span>科瑞时代以可靠品质与高效响应赢得行业认可，未来将持续深耕AI与数字化转型融合创新，成为区域行业智能化升级的可靠伙伴。
+                <span className="text-white font-medium">立足本地，服务西南。</span>科瑞时代以可靠品质与高效响应赢得行业认可，未来将持续深耕AI与数字化转型融合创新，成为区域行业智能化升级的可靠伙伴，并面向全球提供供应链服务。
               </p>
               <a href="mailto:dennis.y@coray.tech" className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
                 商务合作
@@ -363,7 +364,7 @@ export default function Home() {
                 <div className="text-gray-400">深度覆盖</div>
               </div>
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-gray-600 transition-all">
-                <div className="text-white font-bold text-3xl mb-2">西南</div>
+                <div className="text-white font-bold text-3xl mb-2">面向全球</div>
                 <div className="text-gray-400">区域服务</div>
               </div>
             </div>
