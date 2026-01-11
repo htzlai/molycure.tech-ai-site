@@ -24,10 +24,6 @@ import CometBackground from '@/components/CometBackground'
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [typedText, setTypedText] = useState('')
-  const [showCursor, setShowCursor] = useState(true)
-  
-  const fullText = '构建可靠硬件，释放行业智能'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,22 +31,6 @@ export default function Home() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // 打字机效果
-  useEffect(() => {
-    let index = 0
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setTypedText(fullText.slice(0, index))
-        index++
-      } else {
-        clearInterval(timer)
-        // 打字完成后闪烁光标几次然后隐藏
-        setTimeout(() => setShowCursor(false), 2000)
-      }
-    }, 120)
-    return () => clearInterval(timer)
   }, [])
 
   // 核心产品与方案 - 6个
@@ -135,9 +115,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30">
-                <span className="text-white font-bold text-xl">科</span>
-              </div>
+              <img src="/logo.png" alt="Coray Tech Logo" className="w-10 h-10 rounded-lg" />
               <div className="hidden sm:block">
                 <div className="text-lg font-bold text-white">Coray Tech</div>
                 <div className="text-xs text-blue-300">科瑞时代科技</div>
@@ -202,14 +180,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto text-center w-full">
           <div className="animate-fade-in">
             <div className="mb-8">
-              {/* 中文标语 - 打字机效果 */}
-              <div className="text-xl md:text-2xl font-medium tracking-wide text-white mb-3 h-8">
-                {typedText}
-                <span className={`inline-block w-0.5 h-6 bg-blue-400 ml-1 align-middle ${showCursor ? 'animate-pulse' : 'opacity-0'}`}></span>
+              {/* 中文标语 - 流光效果 */}
+              <div className="text-xl md:text-2xl font-medium tracking-wide mb-3">
+                <span className="bg-gradient-to-r from-gray-300 via-blue-400 to-gray-300 bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent">
+                  构建可靠硬件，释放行业智能
+                </span>
               </div>
               {/* 英文标语 - 流光效果 */}
               <div className="text-sm md:text-base tracking-wider">
-                <span className="bg-gradient-to-r from-gray-400 via-blue-400 to-gray-400 bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-gray-500 via-cyan-400 to-gray-500 bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent font-medium" style={{ animationDelay: '1.5s' }}>
                   Building reliable hardware. Enabling industry intelligence.
                 </span>
               </div>
@@ -453,16 +432,14 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">科</span>
-                </div>
+                <img src="/logo.png" alt="Coray Tech Logo" className="w-10 h-10 rounded-lg" />
                 <div>
                   <div className="text-white font-bold">Coray Tech</div>
                   <div className="text-xs text-gray-500">科瑞时代科技</div>
                 </div>
               </div>
               <p className="text-sm text-gray-500">
-                硬件筑基 · 智能赋能
+                构建可靠硬件，释放行业智能
                 <br />
                 让AI落地每一个行业场景
               </p>
