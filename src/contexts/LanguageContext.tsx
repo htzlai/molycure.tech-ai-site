@@ -1,30 +1,50 @@
-"use client";
+'use client';
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { translations, type Language as LangType, type Translations } from '@/lib/translations';
 
-type Language = 'zh' | 'en';
+export type Language = 'zh' | 'en';
 
 interface LanguageContextType {
   language: Language;
-  toggleLanguage: () => void;
-  t: (zhText: string, enText: string) => string;
+  setLanguage: (lang: Language) => void;
+  t: Translations;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('zh');
+  // 默认使用中文，客户端会立即更新
+  const [language, setLanguageState] = useState<Language>('zh');
+  const [mounted, setMounted] = useState(false);
 
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'zh' ? 'en' : 'zh');
+  // 从 localStorage 读取语言设置，如果没有则根据浏览器语言设置
+  useEffect(() => {
+    setMounted(true);
+    const savedLanguage = localStorage.getItem('language') as Language;
+    if (savedLanguage && (savedLanguage === 'zh' || savedLanguage === 'en')) {
+      setLanguageState(savedLanguage);
+      document.documentElement.lang = savedLanguage === 'zh' ? 'zh-CN' : 'en';
+    } else {
+      // 检测浏览器语言
+      const browserLang = navigator.language.toLowerCase();
+      const detectedLang: Language = browserLang.startsWith('zh') ? 'zh' : 'en';
+      setLanguageState(detectedLang);
+      document.documentElement.lang = detectedLang === 'zh' ? 'zh-CN' : 'en';
+    }
+  }, []);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem('language', lang);
+    // 更新 HTML lang 属性
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
   };
 
-  const t = (zhText: string, enText: string) => {
-    return language === 'zh' ? zhText : enText;
-  };
-
+  // 始终提供 Context，即使在服务端渲染时也使用默认值
+  // 这样可以避免 hydration 不匹配的问题
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t: translations[language] }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -37,4 +57,3 @@ export function useLanguage() {
   }
   return context;
 }
-

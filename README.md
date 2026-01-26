@@ -1,368 +1,132 @@
-# 魔力奇 Molycure | AI智能体全球出海解决方案
+# NovaTech - NVIDIA-Inspired Website Template
 
-## 🚀 公司简介
+A stunning, modern website template featuring a dynamic nebula particle background, inspired by NVIDIA's build.nvidia.com design aesthetic. Built with Next.js 14+, Tailwind CSS, and Framer Motion.
 
-魔力奇（Molycure）是一家基于人工智能的智能体项目，专注帮助企业高效出海。依托大模型与智能体技术，我们为企业提供一站式出海解决方案，包括市场洞察、智能拓客、多语种沟通、合规风控与运营协同，助力企业低成本进入全球市场，提升获客效率与转化效果。
+## Features
 
-## ✨ 核心服务
+- **Dynamic Nebula Background** - Canvas-based particle animation system with:
+  - Floating particles with varying sizes and opacity
+  - Subtle twinkling/pulsing effects
+  - Particle connection lines for network effect
+  - Performance-optimized with requestAnimationFrame
 
-### 一站式出海服务
-从市场洞察到运营协同，用一套智能体系统跑通出海全流程
+- **Multi-layer Gradient System** - CSS gradient masks creating depth and atmosphere
 
-- **品牌与市场** - 基于公开数据、社交声量与行业报告，快速建立目标区域的机会图谱和品牌定位建议
-- **获客与沟通** - 多语种外联、站内外客服与社媒私信统一由智能体协同处理，保证语气统一、合规可控
+- **Comprehensive Design System** - CSS variables for easy customization:
+  - Primary and accent colors (Blue theme by default)
+  - Typography scale
+  - Spacing and border radius tokens
+  - Animation timing
 
-### 核心优势
-- **AI智能体技术** - 基于大模型与智能体编排
-- **全球市场覆盖** - 支持100+多语种沟通
-- **高效低成本** - 节省30-40%一线人力成本
-- **数据驱动决策** - 线索转化效率提升2.1x
+- **Responsive UI Components**:
+  - Card, Button, Badge, Input, Textarea
+  - NavBar with mobile menu
+  - Footer with social links
 
-## 🛠️ 技术栈
+- **5 Complete Pages**:
+  - **Home** - Hero section, features grid, stats, CTA
+  - **Products** - Filterable product cards
+  - **About** - Timeline, team, values
+  - **Contact** - Form with validation
+  - **Blog** - Article cards with search
 
-- **框架**: Next.js 14 (App Router)
-- **语言**: TypeScript
-- **样式**: Tailwind CSS
-- **图标**: Lucide React
-- **动画**: HTML5 Canvas (彗星粒子效果)
-
-## 📦 快速开始
+## Quick Start
 
 ```bash
-# 克隆仓库
-git clone https://github.com/htzlai/molycure.tech-ai-site.git
-cd molycure-ai-site
-
-# 安装依赖
+# Install dependencies
 npm install
 
-# 启动开发服务器
+# Start development server
 npm run dev
 
-# 浏览器访问 http://localhost:3000
-
-# 构建生产版本
+# Build for production
 npm run build
-
-# 启动生产服务器
-npm start
 ```
 
-## 📁 项目结构
+## Customization
+
+### Brand Colors
+
+Edit `src/app/globals.css` to change the color scheme:
+
+```css
+:root {
+  --color-primary: #30B4FF;      /* Main brand color */
+  --color-accent: #7C8FFE;       /* Secondary accent */
+  --color-bg-dark: #0a0a0f;      /* Background */
+  --color-bg-card: #12121a;      /* Card background */
+}
+```
+
+### Particle Configuration
+
+Modify `src/lib/particles.ts`:
+
+```typescript
+const defaultConfig = {
+  count: 120,              // Number of particles
+  minRadius: 1.5,          // Min particle size
+  maxRadius: 4,            // Max particle size
+  colors: ['#30B4FF', '#7C8FFE', '#ffffff'],  // Particle colors
+  connectionDistance: 180, // Max distance for connection lines
+};
+```
+
+### Company Information
+
+Update these files:
+- `src/app/layout.tsx` - Site metadata
+- `src/components/layout/NavBar.tsx` - Logo and navigation
+- `src/components/layout/Footer.tsx` - Links and social icons
+
+## Tech Stack
+
+- **Framework**: Next.js 14+ (App Router)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Language**: TypeScript
+
+## Project Structure
 
 ```
-molycure-ai-site/
+src/
 ├── app/
-│   ├── layout.tsx          # 根布局 + SEO配置
-│   ├── page.tsx            # 主页面（包含所有sections）
-│   └── globals.css         # 全局样式
+│   ├── layout.tsx          # Root layout with background
+│   ├── page.tsx            # Home page
+│   ├── products/page.tsx   # Products page
+│   ├── about/page.tsx      # About page
+│   ├── contact/page.tsx    # Contact page
+│   └── blog/page.tsx       # Blog page
 ├── components/
-│   └── CometBackground.tsx # 彗星粒子背景动画组件
-├── public/
-│   └── logo.png            # Molycure Logo
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── README.md
+│   ├── backgrounds/
+│   │   ├── NebulaCanvas.tsx    # Particle animation
+│   │   └── GradientMask.tsx    # Gradient overlays
+│   ├── layout/
+│   │   ├── NavBar.tsx          # Navigation
+│   │   └── Footer.tsx          # Footer
+│   └── ui/
+│       ├── Button.tsx
+│       ├── Card.tsx
+│       ├── Badge.tsx
+│       ├── Input.tsx
+│       └── Textarea.tsx
+├── lib/
+│   └── particles.ts        # Particle system class
+└── styles/
+    └── globals.css         # Design tokens & utilities
 ```
 
-## 🔗 开发工具与部署架构
+## Performance
 
-### 工具链关联逻辑
+- Particle count auto-scales based on screen size
+- Uses `requestAnimationFrame` for smooth 60fps animation
+- Static page generation for fast initial load
+- Optimized images with Next.js Image component
 
-```
-┌─────────────┐         ┌──────────────┐         ┌─────────────┐
-│   Cursor    │ ───Git──>│   GitHub     │ ───CI──>│   Vercel    │
-│  (本地开发)  │         │  (代码仓库)   │         │ (生产部署)   │
-└─────────────┘         └──────────────┘         └─────────────┘
-      │                        │                        │
-      │ 编辑代码                │ 代码托管                │ 自动部署
-      │ 本地预览                │ 版本管理                │ 生产环境
-      │ git commit/push        │ webhook触发            │ HTTPS域名
-```
+## License
 
-### 工作流程
+MIT License - Feel free to use for personal or commercial projects.
 
-1. **本地开发 (Cursor)**
-   - 使用 Cursor IDE 编辑代码
-   - 本地运行 `npm run dev` 预览
-   - 测试通过后提交到 Git
+---
 
-2. **代码管理 (GitHub)**
-   - 代码推送到 GitHub 仓库：https://github.com/htzlai/molycure.tech-ai-site
-   - 团队成员通过 GitHub 协作
-   - 版本历史和代码审查
-
-3. **自动部署 (Vercel)**
-   - GitHub 推送触发 Vercel 自动构建
-   - 自动运行 `npm run build`
-   - 部署到生产环境（通常几分钟内完成）
-
-## 🔧 开发环境设置
-
-### 首次设置
-
-```bash
-# 1. 克隆仓库
-git clone https://github.com/htzlai/molycure.tech-ai-site.git
-cd molycure-ai-site
-
-# 2. 安装依赖
-npm install
-
-# 3. 启动开发服务器
-npm run dev
-
-# 4. 浏览器访问 http://localhost:3000
-```
-
-### 使用 Cursor IDE
-
-1. **打开项目**
-   - 在 Cursor 中打开项目文件夹
-   - 或使用命令：`cursor .`
-
-2. **配置推荐**
-   - Cursor 会自动识别 TypeScript/React 项目
-   - 推荐安装 ESLint 和 Prettier 扩展（如未自动安装）
-
-3. **AI 辅助开发**
-   - Cursor 内置 AI 助手，可以协助代码编写和调试
-   - 使用 `Cmd+K` (Mac) 或 `Ctrl+K` (Windows) 进行 AI 对话
-
-## 📝 日常维护指令
-
-### Git 基本操作
-
-```bash
-# 查看当前状态
-git status
-
-# 查看修改内容
-git diff
-
-# 添加所有修改
-git add .
-
-# 提交修改（请使用有意义的提交信息）
-git commit -m "描述本次修改的内容"
-
-# 推送到远程仓库
-git push origin main
-
-# 拉取最新代码
-git pull origin main
-
-# 查看提交历史
-git log --oneline
-
-# 创建新分支（用于新功能开发）
-git checkout -b feature/新功能名称
-
-# 切换分支
-git checkout main
-
-# 合并分支
-git merge feature/新功能名称
-```
-
-### 推荐的 Git 工作流程
-
-```bash
-# 1. 开始工作前，先拉取最新代码
-git pull origin main
-
-# 2. 创建功能分支（可选，小修改可直接在main分支）
-git checkout -b feature/更新内容
-
-# 3. 进行代码修改
-# ... 在 Cursor 中编辑代码 ...
-
-# 4. 本地测试
-npm run dev
-# 在浏览器中检查 http://localhost:3000
-
-# 5. 提交修改
-git add .
-git commit -m "更新网站内容"
-
-# 6. 推送到 GitHub
-git push origin main  # 或 git push origin feature/更新内容
-
-# 7. Vercel 会自动检测推送并部署
-```
-
-### 常用维护命令
-
-```bash
-# 更新依赖包
-npm update
-
-# 检查过时的包
-npm outdated
-
-# 清理构建缓存
-rm -rf .next
-npm run build
-
-# 检查代码格式
-npm run lint
-
-# 查看构建产物大小
-npm run build
-# 查看 .next 目录大小
-du -sh .next
-```
-
-### 调试命令
-
-```bash
-# 开发模式（热重载）
-npm run dev
-
-# 生产模式构建测试
-npm run build
-npm start
-
-# 检查 TypeScript 错误
-npx tsc --noEmit
-
-# 检查 Tailwind CSS 类名
-npx tailwindcss -i ./app/globals.css -o ./test-output.css --watch
-```
-
-## 🚀 部署说明
-
-### Vercel 自动部署
-
-项目已配置 Vercel 自动部署，工作流程：
-
-1. **推送代码到 GitHub**
-   ```bash
-   git push origin main
-   ```
-
-2. **Vercel 自动触发**
-   - Vercel 检测到 GitHub 推送
-   - 自动运行构建命令：`npm run build`
-   - 部署到生产环境
-
-3. **查看部署状态**
-   - 登录 [Vercel Dashboard](https://vercel.com/dashboard)
-   - 查看部署日志和状态
-
-### 手动部署到 Vercel
-
-如果需要手动部署：
-
-```bash
-# 安装 Vercel CLI
-npm i -g vercel
-
-# 登录 Vercel
-vercel login
-
-# 部署到生产环境
-vercel --prod
-```
-
-### 环境变量（如需要）
-
-如果项目需要环境变量：
-
-1. 在 Vercel Dashboard 中设置
-2. 或使用 `.env.local` 文件（本地开发）
-3. 注意：`.env.local` 不应提交到 Git（已在 .gitignore 中）
-
-## 👥 团队协作指南
-
-### 添加新团队成员
-
-1. **GitHub 协作**
-   - 仓库管理员在 GitHub 中添加 Collaborator
-   - 路径：Settings → Collaborators → Add people
-   - 新成员接受邀请后即可推送代码
-
-2. **Vercel 访问权限**
-   - 项目管理员在 Vercel 中添加团队成员
-   - 路径：Project Settings → Members
-   - 设置适当的权限级别
-
-### 代码协作最佳实践
-
-1. **提交规范**
-   - 使用清晰的提交信息
-   - 格式：`类型: 简短描述`
-   - 类型示例：`✨ 新功能`、`🐛 修复`、`📝 文档`、`🎨 样式`
-
-2. **代码审查**
-   - 重要修改建议创建 Pull Request
-   - 小修改可直接推送到 main 分支
-   - 团队成员互相审查代码
-
-3. **冲突解决**
-   ```bash
-   # 如果推送时出现冲突
-   git pull origin main
-   # 手动解决冲突后
-   git add .
-   git commit -m "解决合并冲突"
-   git push origin main
-   ```
-
-## 📞 联系方式
-
-访问官网了解更多：[https://www.molycure.tech/](https://www.molycure.tech/)
-
-GitHub 仓库：[https://github.com/htzlai/molycure.tech-ai-site](https://github.com/htzlai/molycure.tech-ai-site)
-
-## 🏢 公司信息
-
-- **公司名称**: Molycure
-- **中文名称**: 魔力奇
-- **定位**: AI智能体全球出海解决方案
-- **服务地区**: 新加坡及全球市场
-
-## 🆘 常见问题
-
-### 开发服务器启动失败
-
-```bash
-# 清除 node_modules 和缓存重新安装
-rm -rf node_modules .next
-npm install
-npm run dev
-```
-
-### 构建失败
-
-```bash
-# 检查 TypeScript 错误
-npx tsc --noEmit
-
-# 检查依赖是否完整
-npm install
-
-# 查看详细错误信息
-npm run build
-```
-
-### Vercel 部署失败
-
-1. 检查构建日志中的错误信息
-2. 确保 `package.json` 中的构建脚本正确
-3. 检查 Node.js 版本兼容性（建议 18.x 或更高）
-
-### Git 推送被拒绝
-
-```bash
-# 先拉取最新代码
-git pull origin main --rebase
-
-# 解决冲突后再次推送
-git push origin main
-```
-
-## 📄 许可证
-
-© 2026 Molycure. All rights reserved.
+Built with ❤️ inspired by NVIDIA's design language.
