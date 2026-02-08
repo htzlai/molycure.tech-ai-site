@@ -24,17 +24,15 @@ export default function NavBar() {
       <div className="glass border-b border-white/10">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative h-[120px] w-[120px]">
-              <Image 
-                src="/logo-full.png" 
-                alt="Molycure Logo" 
-                width={120}
-                height={120}
-                className="h-full w-full object-contain"
-                priority
-              />
-            </div>
+          <Link href="/" className="flex items-center gap-2">
+            <Image 
+              src="/logo-full.png" 
+              alt="Molycure Logo" 
+              width={48}
+              height={32}
+              className="h-10 w-auto object-contain"
+              priority
+            />
             <span className="text-xl font-bold tracking-tight">
               <span className="text-gradient">Moly</span>
               <span className="text-white">cure</span>
