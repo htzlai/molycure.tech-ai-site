@@ -143,8 +143,8 @@ export default function Footer() {
               <Image 
                 src="/logo-full.png" 
                 alt="Molycure Logo" 
-                width={32}
-                height={32}
+                width={82}
+                height={82}
                 className="h-full w-full object-contain"
               />
             </div>
