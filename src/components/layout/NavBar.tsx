@@ -25,12 +25,12 @@ export default function NavBar() {
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative h-10 w-10">
+            <div className="relative h-[120px] w-[120px]">
               <Image 
                 src="/logo-full.png" 
                 alt="Molycure Logo" 
-                width={80}
-                height={80}
+                width={120}
+                height={120}
                 className="h-full w-full object-contain"
                 priority
               />

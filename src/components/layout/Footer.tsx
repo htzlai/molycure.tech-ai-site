@@ -138,13 +138,13 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
           {/* Logo & Copyright */}
-          <div className="flex items-center gap-3">
-            <div className="relative h-8 w-8">
+          <div className="flex items-center gap-4">
+            <div className="relative h-24 w-24">
               <Image 
                 src="/logo-full.png" 
                 alt="Molycure Logo" 
-                width={82}
-                height={82}
+                width={96}
+                height={96}
                 className="h-full w-full object-contain"
               />
             </div>
