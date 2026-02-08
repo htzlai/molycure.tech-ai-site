@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   description: "基于AI智能体，助力企业高效出海。依托大模型与智能体技术，提供市场洞察、智能拓客、多语种沟通、合规风控与运营协同一站式解决方案。",
   keywords: ["AI智能体", "全球出海", "市场洞察", "智能拓客", "多语种沟通", "合规风控", "新加坡", "B2B SaaS", "跨境电商"],
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/logo-full.png',
+    apple: '/logo-full.png',
   },
 };
 

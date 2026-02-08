@@ -138,13 +138,13 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
           {/* Logo & Copyright */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-0">
             <Image 
               src="/logo.png" 
               alt="Molycure Logo" 
-              width={48}
-              height={32}
-              className="h-8 w-auto object-contain"
+              width={60}
+              height={40}
+              className="h-15 w-auto object-contain"
             />
             <span className="text-sm text-[var(--color-text-muted)]">
               © {new Date().getFullYear()} {t.footer.copyright}. All rights reserved.
