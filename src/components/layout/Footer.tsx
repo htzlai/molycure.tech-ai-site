@@ -140,11 +140,11 @@ export default function Footer() {
           {/* Logo & Copyright */}
           <div className="flex items-center gap-3">
             <Image 
-              src="/logo-full.png" 
+              src="/logo.png" 
               alt="Molycure Logo" 
-              width={48}
+              width={32}
               height={32}
-              className="h-8 w-auto object-contain"
+              className="h-8 w-8 object-contain"
             />
             <span className="text-sm text-[var(--color-text-muted)]">
               © {new Date().getFullYear()} {t.footer.copyright}. All rights reserved.

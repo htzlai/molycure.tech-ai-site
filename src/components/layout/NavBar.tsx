@@ -26,11 +26,11 @@ export default function NavBar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image 
-              src="/logo-full.png" 
+              src="/logo.png" 
               alt="Molycure Logo" 
-              width={48}
-              height={32}
-              className="h-10 w-auto object-contain"
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain"
               priority
             />
             <span className="text-xl font-bold tracking-tight">
