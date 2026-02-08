@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const socialLinks = [
@@ -138,8 +139,14 @@ export default function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
           {/* Logo & Copyright */}
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary">
-              <span className="text-sm font-bold text-white">M</span>
+            <div className="relative h-8 w-8">
+              <Image 
+                src="/logo-full.png" 
+                alt="Molycure Logo" 
+                width={32}
+                height={32}
+                className="h-full w-full object-contain"
+              />
             </div>
             <span className="text-sm text-[var(--color-text-muted)]">
               © {new Date().getFullYear()} {t.footer.copyright}. All rights reserved.

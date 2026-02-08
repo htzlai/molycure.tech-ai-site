@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
@@ -23,9 +24,16 @@ export default function NavBar() {
       <div className="glass border-b border-white/10">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-primary">
-              <span className="text-xl font-bold text-white">M</span>
+          <Link href="/" className="flex items-center gap-3">
+            <div className="relative h-10 w-10">
+              <Image 
+                src="/logo-full.png" 
+                alt="Molycure Logo" 
+                width={40}
+                height={40}
+                className="h-full w-full object-contain"
+                priority
+              />
             </div>
             <span className="text-xl font-bold tracking-tight">
               <span className="text-gradient">Moly</span>
