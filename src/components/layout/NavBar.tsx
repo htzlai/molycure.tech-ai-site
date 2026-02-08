@@ -28,9 +28,9 @@ export default function NavBar() {
             <Image 
               src="/logo.png" 
               alt="Molycure Logo" 
-              width={40}
+              width={60}
               height={40}
-              className="h-10 w-10 object-contain"
+              className="h-10 w-auto object-contain"
               priority
             />
             <span className="text-xl font-bold tracking-tight">

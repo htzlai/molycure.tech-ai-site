@@ -142,9 +142,9 @@ export default function Footer() {
             <Image 
               src="/logo.png" 
               alt="Molycure Logo" 
-              width={32}
+              width={48}
               height={32}
-              className="h-8 w-8 object-contain"
+              className="h-8 w-auto object-contain"
             />
             <span className="text-sm text-[var(--color-text-muted)]">
               © {new Date().getFullYear()} {t.footer.copyright}. All rights reserved.
